@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import com.sankara.garage.Garage;
 import com.sankara.models.AlfaRomeo;
 import com.sankara.models.Fiat500;
@@ -22,11 +25,13 @@ public class Main {
 		
 
 		Garage garage = new Garage();
+		List<Vehicle> listOfCars = new ArrayList<Vehicle>();	
 
 		Vehicle kanta = new KantakaNkunimdie();
 		kanta.setMotor(new DieselMotor("200 Hdi", 25484.80d));
 		kanta.addOptions(new GPS());
 		kanta.addOptions(new Climatisation());
+		listOfCars.add(kanta);
 		//garage.addCar(kanta);
 		
 		Vehicle mitsu = new MitsubishiOutlander();
@@ -34,6 +39,7 @@ public class Main {
 		mitsu.addOptions(new GPS());
 		mitsu.addOptions(new ElectricWindow());
 		mitsu.addOptions(new Climatisation());	
+		listOfCars.add(mitsu);
 		//garage.addCar(mitsu);
 		
 		Vehicle renault = new RenaultMegane();
@@ -42,13 +48,20 @@ public class Main {
 		renault.addOptions(new Climatisation());
 		renault.addOptions(new ElectricWindow());
 		renault.addOptions(new HeatedSeat());
+		listOfCars.add(renault);
 		//garage.addCar(renault);
 		
+		Vehicle niss = new NissanKicks();
+		niss.setMotor(new ElectricMotor("1500 W", 17654.05d));
+		niss.addOptions(new Convertible());
+		niss.addOptions(new GPS());
+		niss.addOptions(new HeatedSeat());
+		listOfCars.add(niss);
+		//garage.addCar(niss);
 		
-		System.out.println(garage.toString());
-		garage.removeCar(mitsu);
-		System.out.println(garage.toString());
 		
+		garage.removeSomeCars(listOfCars);
+		System.out.println(garage.toString());
 		
 	}
 }

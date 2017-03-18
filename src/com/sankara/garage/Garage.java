@@ -63,7 +63,9 @@ public class Garage {
 	}
 	
 	public void removeSomeCars(List<Vehicle> tempList) {
-		Garage.myCarStock.getMyList().removeAll(tempList);
+		for (Vehicle v : tempList) {
+			this.removeCar(v);
+		}
 		this.writeMyCarStock();
 	}
 	
@@ -119,7 +121,6 @@ public class Garage {
 		return tempList;
 	}
 	
-	
 	public String stringUpMyCarStock() {
 		List<Vehicle> tempList = Garage.myCarStock.getMyList();
 		String str = "";
@@ -141,6 +142,5 @@ public class Garage {
 				+ "****************************\n\n"
 				+ "My garage contains " + Garage.myCarStock.getMyList().size() + " cars.\n\n"
 				+ this.stringUpMyCarStock();
-	}
-	
+	}	
 }

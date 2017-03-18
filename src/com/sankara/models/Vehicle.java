@@ -96,7 +96,7 @@ public abstract class Vehicle implements Options, Serializable {
 				+ "\nMotor : " + motor + "\n"
 				+ "\nCar options :\n" + this.getStringOptions() + "\n"
 				+ "\nTotal price : " + this.getTotalPrice() + " \u20ac"	
-				+ "\n-----------------------------------\n";
+				+ "\n-----------------------------------\n\n";
 
 	}
 	
